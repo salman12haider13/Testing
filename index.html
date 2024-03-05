@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Your Map Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />  
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.syncfusion.com/ej2/material.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="CSS.css">
+</head>
+<body>
+    <div class="overlay-container">
+        <div class="map-overlay">
+            <button id="temperature-btn"><i>🌡️</i> Temperature</button>
+            <button id="dry-wet-btn"><i>💧</i> Dry/Wet Region</button>
+            <button id="tourist-density-btn"><i>👥</i> Tourist Density</button>
+        </div>
+        <div class="content-wrapper">
+            <div class="slider-content-wrapper">
+                <div class="slider_container">
+                    <div>
+                        <div id="slider"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='map'></div>
+	<script src="script.js"></script>
+	</body>
+</html>
