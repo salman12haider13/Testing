@@ -1,78 +1,77 @@
 body { margin: 0; padding: 0; }
-        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
 
-        .overlay-container {
-            position: relative;
-            background-color: rgba(192, 192, 192, 0.6); /* Adjust the background color and opacity */
-            backdrop-filter: blur(5px); /* Add blur effect */
-            z-index: 1; /* Ensure it's above the map */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            width: fit-content; /* Set width to fit content */
-            padding: 10px; /* Add padding for spacing */
-        }
+.overlay-container {
+	position: relative;
+	background-color: rgba(192, 192, 192, 0.6);
+	backdrop-filter: blur(5px);
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: fit-content;
+	padding: 10px;
+}
 
-        .map-overlay {
-            display: flex;
-            flex-wrap: nowrap;
-        }
+.map-overlay {
+	display: flex;
+	flex-wrap: nowrap;
+}
 
-        .map-overlay button {
-            position: relative;
-            left: 10px;
-            background-color: #edeaea;
-            border: 1px solid #ccc;
-            color: #555;
-            padding: 0.2em 0.9em; /* Adjusted padding using relative units */
-            margin-right: 4px; /* Adjusted margin between buttons */
-            margin-bottom: 4px; /* Adjusted margin between buttons and slider */
-            text-align: left;
-            font-size: 0.8em; /* Adjusted font-size using relative units */
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            max-width: 200px; /* Maximum width for buttons */
-        }
+.map-overlay button {
+	position: relative;
+	left: 10px;
+	background-color: #edeaea;
+	border: 1px solid #ccc;
+	color: #555;
+	padding: 0.2em 0.9em;
+	margin-right: 4px;
+	margin-bottom: 4px;
+	text-align: left;
+	font-size: 0.8em;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	max-width: 200px;
+}
 
-        .map-overlay button:hover {
-            border-color: #aaa;
-        }
+.map-overlay button:hover {
+	border-color: #aaa;
+}
 
-        .map-overlay button.active {
-            background-color: #4CAF50;
-            border-color: #4CAF50;
-            color: white;
-        }
+.map-overlay button.active {
+	background-color: #4CAF50;
+	border-color: #4CAF50;
+	color: white;
+}
 
-        .map-overlay i {
-            font-style: normal; /* Replace with font icons if available */
-            padding-right: 8px;
-        }
-        
-        .content-wrapper {
-            top: 20px;
-            position: relative;
-            width: calc(100% - 20px);
-            padding: 10px;
-            box-sizing: border-box;
-            z-index: 2; /* Ensure content is above the overlay */
-        }
+.map-overlay i {
+	font-style: normal;
+	padding-right: 8px;
+}
 
-        .slider-content-wrapper {
-            left: 10px; /* Center the slider */
-            display: inherit;
-        }
-        
-        /* CSS to hide the pink line on the slider */
-        .e-range {
-            background-color: transparent !important;
-        }
+.content-wrapper {
+	top: 20px;
+	position: relative;
+	width: calc(100% - 20px);
+	padding: 10px;
+	box-sizing: border-box;
+	z-index: 2;
+}
 
-        @media (max-width: 768px) {
-            .overlay-container {
-                justify-content: flex-start; /* Adjust alignment for smaller screens */
-            }
-        }
+.slider-content-wrapper {
+	left: 10px;
+	display: inherit;
+}
+
+.e-range {
+	background-color: transparent !important;
+}
+
+@media (max-width: 768px) {
+	.overlay-container {
+		justify-content: flex-start;
+	}
+}
