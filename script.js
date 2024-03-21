@@ -18,7 +18,7 @@ const map = new mapboxgl.Map({
 
 // Add navigation control
 map.addControl(new mapboxgl.NavigationControl(), 'bottom-left');
-map.setRenderWorldCopies(false);
+map.setRenderWorldCopies(true);
 
 let customTicks;
 
@@ -57,14 +57,14 @@ map.on('load', () => {
 
 	map.addSource('World_counties', {
 		type: 'vector',
-		url: 'mapbox://salman12haider13.113rkkfa'
+		url: 'mapbox://salman12haider13.9w9vpocz'
 	});
 
 	map.addLayer({
 		'id': 'Countires',
 		'type': 'fill',
 		'source': 'World_counties',
-		'source-layer': 'Countries-2bp3gb',
+		'source-layer': 'Countries-6rijjv',
 		'layout': {},
 		'paint': {
 			'fill-opacity': 0
@@ -250,10 +250,43 @@ map.on('click', 'Countires', (e) => {
 	}
 
 	const countryName = features[0].properties.name;
+	const countryCode = features[0].properties.Abbrivatio; // Replace with the actual country code
+	const currency = features[0].properties.Currency; // Replace with the actual currency
+	const vaccines = features[0].properties.Vaccine; // Replace with the actual value
+	const vaccines_url = features[0].properties.Link; // Replace with the actual value
+	const visaOnEntry = ''; // Replace with the actual value
+	const capitalCity = ''; // Replace with the actual capital city
+	const totalTourism = features[0].properties.Tour_2016; // Replace with the actual total tourism value
 
-	new mapboxgl.Popup()
+	const popupContent = `
+		<h2>${countryName} (${countryCode})</h2>
+		<table>
+			<tr>
+				<th>Currency</th>
+				<td>${currency}</td>
+			</tr>
+			<tr>
+				<th>Recommended Vaccines</th>
+				<td>${vaccines} <a href="${vaccines_url}" target="_blank"><span class="icon">&#128279;</span></a></td>
+			</tr>
+			<tr>
+				<th>Visa on Entry</th>
+				<td>${visaOnEntry} <span class="icon">&#128279;</span></td>
+			</tr>
+			<tr>
+				<th>Capital City</th>
+				<td>${capitalCity}</td>
+			</tr>
+			<tr>
+				<th>Total Tourism (2016)</th>
+				<td>${totalTourism}</td>
+			</tr>
+		</table>
+	`;
+
+	const popup = new mapboxgl.Popup()
 		.setLngLat(e.lngLat)
-		.setHTML(countryName)
+		.setHTML(popupContent)
 		.addTo(map);
 });
 
@@ -264,4 +297,4 @@ function getValue(i = 0) {
 	const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 	const year = todayTime.getFullYear();
 	return months[month];
-};
+}
